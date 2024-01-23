@@ -37,3 +37,8 @@ if [ "$1" == "memcheck" ]; then
   test_memory_leak_continuous 'r' "$SERVER_DIR" "$CLIENT_DIR" "${s2c_filenames[@]}"
   test_memory_leak_continuous 'w' "$CLIENT_DIR" "$SERVER_DIR" "${c2s_filenames[@]}"
 fi
+
+if [ "$1" == "binary" ]; then
+  test_file_transfer 'r' "$SERVER_DIR" "$CLIENT_DIR" "server-to-client-random.bin"
+  test_file_transfer 'w' "$CLIENT_DIR" "$SERVER_DIR" "client-to-server-random.bin"
+fi

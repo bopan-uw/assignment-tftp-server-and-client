@@ -14,7 +14,6 @@ compare_files () {
     echo -e "${RED}$3 does not exist.${NC}"
     exit 1
   fi
-  echo -e "${BLUE}Checking diff between $2 and $3${NC}"
   diff "$2" "$3"
   RESULT=$?
   if [ $RESULT -eq 1 ]

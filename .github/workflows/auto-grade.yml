@@ -75,6 +75,10 @@ jobs:
         working-directory: ${{github.workspace}}/build
         run: bash TestLargeFiles.sh continuous
 
+      - name: Test binary file transfer
+        working-directory: ${{github.workspace}}/build
+        run: bash TestLargeFiles.sh binary
+
       - name: Check memory leak
         working-directory: ${{github.workspace}}/build
         run: bash TestLargeFiles.sh memcheck
